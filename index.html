@@ -23,7 +23,7 @@ body{
     background-attachment:fixed;
 }
 
-/* ===== TOP HEADER (HUY HIỆU) ===== */
+/* ===== TOP HEADER ===== */
 .top-header{
     display:flex;
     align-items:center;
@@ -92,7 +92,6 @@ body{
     padding:35px;
     backdrop-filter:blur(8px);
     box-shadow:0 10px 30px rgba(0,0,0,0.25);
-    animation:fade 0.3s ease;
     max-width:900px;
     margin:auto;
 }
@@ -114,66 +113,56 @@ p{
     margin-bottom:10px;
 }
 
-@keyframes fade{
-    from{
-        opacity:0;
-        transform:translateY(15px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-/* MAP BUTTON */
+/* ===== MAP BUTTON ===== */
 .map-btn{
     display:inline-block;
     margin-top:10px;
-    margin-bottom:15px; /* thêm khoảng cách phía dưới */
+    margin-bottom:15px;
     padding:12px 18px;
     background:#ffd700;
     color:#000;
     border-radius:10px;
     font-weight:bold;
     text-decoration:none;
-    transition:0.3s;
 }
 
-.map-btn:hover{
-    transform:scale(1.05);
+/* ===== ẢNH RESPONSIVE FIX ===== */
+.img-box{
+    text-align:center;
+    margin-top:20px;
 }
+
+.img-box img{
+    width:100%;
+    max-width:650px;
+    height:auto;
+    display:block;
+    margin:0 auto;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.4);
+}
+
+.caption{
+    text-align:center;
+    font-style:italic;
+    font-size:16px;
+    color:#fff2a8;
+    margin-top:8px;
+    line-height:1.5;
+}
+
+/* ===== HISTORY TEXT ===== */
 .history-text{
-    text-align: justify;
-    line-height: 2;
-    font-size: 18px;
-    color: #fff;
-
-    max-width: 850px;
-    margin: 0 auto;
-
-    text-justify: inter-word;
-    hyphens: auto;
-
-    overflow-wrap: break-word;
-    word-break: normal;
-
-    letter-spacing: 0.2px;
+    text-align:justify;
+    line-height:2;
+    font-size:18px;
+    color:#fff;
+    max-width:850px;
+    margin:0 auto;
 }
-    .caption{
-    text-align: center;
-    font-style: italic;
-    font-size: 16px;
-    color: #fff2a8;
-    margin-top: 8px;
-}
-        .caption1{
-    text-align: center;
-    font-style: italic;
-    font-size: 16px;
-    color: #fff2a8;
-    margin-top: 8px;
-}
-    @media (max-width: 768px){
+
+/* ===== MOBILE ===== */
+@media (max-width:768px){
     .card{
         padding:20px;
     }
@@ -186,97 +175,80 @@ p{
         width:45px;
         height:45px;
     }
+
+    .img-box img{
+        max-width:100%;
+    }
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- ===== HUY HIỆU HEADER ===== -->
+<!-- TOP -->
 <div class="top-header">
-
     <img src="logo.png" class="logo">
 
-    <div class="title">LỮ ĐOÀN 602<br>
-        THÔNG TIN HẢI QUÂN</div>
+    <div class="title">
+        LỮ ĐOÀN 602<br>
+        THÔNG TIN HẢI QUÂN
+    </div>
 
     <img src="huyhieu.png" class="logo">
-
 </div>
 
-<!-- ===== MENU ===== -->
+<!-- MENU -->
 <div class="header">
     <button class="menu-btn active" onclick="showTab('contact', this)">
-        ☎ Thông tin<br> 
-        liên hệ
+        ☎ Thông tin<br>liên hệ
     </button>
 
     <button class="menu-btn" onclick="showTab('history', this)">
-          Truyền thống<br>
-        Lữ đoàn
+        Truyền thống<br>Lữ đoàn
     </button>
 </div>
 
-<!-- ===== CONTENT ===== -->
+<!-- CONTENT -->
 <div class="container">
 
     <div id="contact" class="card">
+
         <h1>Thông tin liên hệ</h1>
-        
-        <h2>Khẩu hiệu</h2>
-        <p>Kịp thời – Chính xác – Bí mật – An toàn</p>
-        
+
         <h2>Địa chỉ</h2>
         <p>Số 267, Lê Hồng Phong, Hải An, Hải Phòng</p>
 
-        <a class="map-btn"
-           href="https://maps.app.goo.gl/iCQdcDSNPrxoDaZY7"
-           target="_blank">
-           🗺 Mở Google Maps
+        <a class="map-btn" href="https://maps.app.goo.gl/iCQdcDSNPrxoDaZY7" target="_blank">
+            🗺 Mở Google Maps
         </a>
 
-        <h2>Thông tin liên hệ:</h2>
-        <p>• Đ/c Trần Ngọc Nam - Chủ nhiệm chính trị (SĐT: 0962773256)</p>
-        <p>• Đ/c Hà Văn Tường - Phó chủ nhiệm chính trị (SĐT: 0868377308)</p>
-        <p>• Đ/c Nguyễn Đình Dĩnh - Cán bộ chính sách (SĐT: 0967124189)</p>
-
-        <h2>Số tài khoản của đơn vị</h2>
+        <h2>Số tài khoản</h2>
         <div class="img-box">
-        <img src="stk.jpg">
+            <img src="stk.jpg">
         </div>
+
     </div>
 
     <div id="history" class="card" style="display:none;">
-        <h1>Ngày 5-7-1961: Ngày truyền thống Lữ đoàn Thông tin 602</h1>
-        
-        <p>
-- Ngày 5-7-1961, Đại đội 3 Thông tin-tiền thân của Lữ đoàn Thông tin 602 ra đời. Cùng với sự phát triển của các lực lượng Hải quân, Đại đội 3 từng bước nâng cấp thành Tiểu đoàn 2 Thông tin (1964), Trung đoàn Thông tin Hải quân 121 (tháng 2-1977), Trung đoàn Thông tin 602 Hải quân (tháng 6-1977) và Lữ đoàn Thông tin 602 (2004).
+
+        <h1>Ngày 5-7-1961: Lữ đoàn Thông tin 602</h1>
+
+        <p class="history-text">
+        - Ngày 5-7-1961, Đại đội 3 Thông tin ra đời. Cùng với quá trình phát triển, đơn vị lần lượt phát triển thành Tiểu đoàn 2 Thông tin (1964), Trung đoàn 121 (1977), Trung đoàn 602 và Lữ đoàn 602 (2004).
         </p>
-<div class="img-box">
-    <img src="nutt.jpg">
 
-    <p class="caption">
-        Các nữ chiến sĩ thông tin của đơn vị đang bảo đảm thông tin phục vụ chiến đấu. Ảnh tư liệu
-    </p>
-</div>
-        
-        <p>Trải qua hơn 60 năm xây dựng, chiến đấu, trưởng thành, Lữ đoàn 602 luôn nhận thức thức rõ vinh dự và trách nhiệm, bảo đảm thông tin liên lạc cho Bộ Tư lệnh Quân chủng hải quân chỉ đạo, chỉ huy các lực lượng sẵn sàng chiến đấu và chiến đấu thắng lợi trong mọi tình huống, đóng góp xứng đáng vào sự nghiệp đấu tranh giải phóng dân tộc, xây dựng và bảo vệ Tổ quốc. Lữ đoàn vinh dự được Đảng, Nhà nước tặng thưởng danh hiệu cao quý “Đơn vị Anh hùng Lực lượng vũ trang nhân dân”. Cán bộ, chiến sĩ, QNCN đơn vị qua các thời kỳ đã xây đắp nên truyền thống vẻ vang: “Kiên trì, anh dũng; đoàn kết, sáng tạo; khắc phục khó khăn; chính xác, kịp thời; an toàn, vững chắc”.</p>
-    <div class="img-box">
-    <img src="traohc.jpg">
+        <div class="img-box">
+            <img src="nutt.jpg">
+            <p class="caption">Các nữ chiến sĩ thông tin trong nhiệm vụ bảo đảm thông tin liên lạc</p>
+        </div>
 
-    <p class="caption1">
-       Với những thành tích, chiến công xuất sắc trong chiến đấu, phục vụ chiến đấu, củng cố quốc phòng, bảo vệ Tổ quốc, năm 2015, Lữ đoàn Thông tin 602 vinh dự đón nhận danh hiệu Đơn vị Anh hùng Lực lượng vũ trang nhân dân.
-    </p>
-</div>
-          <p>
-Đặc biệt, những năm gần đây, Hải quân Nhân dân Việt Nam được xác định là một trong những lực lượng tiến thẳng lên hiện đại, tổ chức biên chế của Quân chủng Hải quân có sự phát triển với nhiều lực lượng mới, hiện đại; tình hình trên biển, đảo diễn biến phức tạp đặt ra yêu cầu, nhiệm vụ bảo đảm thông tin liên lạc cao hơn. Đảng ủy, chỉ huy và toàn thể cán bộ, chiến sĩ Lữ đoàn đã đoàn kết một lòng, khắc phục khó khăn, triển khai các phương án bảo đảm thông tin liên lạc cho các lực lượng; tổ chức huấn luyện nâng cao trình độ chuyên môn, khai thác làm chủ trang bị khí tài thông tin, nhất là thông tin công nghệ cao. Lữ đoàn luôn bảo đảm thông tin liên lạc kịp thời, chính xác, bí mật, an toàn cho Đảng ủy, Bộ Tư lệnh Quân chủng lãnh đạo, chỉ đạo các đơn vị bảo vệ vững chắc chủ quyền biển, đảo, bảo vệ an toàn các hoạt động kinh tế biển và tìm kiếm cứu nạn trên biển.
     </div>
 
 </div>
 
 <script>
 function showTab(tab, btn){
-
     document.getElementById("contact").style.display="none";
     document.getElementById("history").style.display="none";
 
