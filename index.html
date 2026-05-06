@@ -23,39 +23,27 @@ body{
     background-attachment:fixed;
 }
 
-.container{
+/* HEADER MENU */
+.header{
     display:flex;
-    min-height:100vh;
-}
-
-/* Sidebar */
-.sidebar{
-    width:280px;
-    background:rgba(0,50,120,0.92);
+    justify-content:center;
+    gap:15px;
+    padding:18px;
+    background:rgba(0,50,120,0.85);
     backdrop-filter:blur(10px);
-    padding:30px 20px;
-    box-shadow:3px 0 15px rgba(0,0,0,0.3);
-}
-
-.logo{
-    font-size:28px;
-    font-weight:bold;
-    color:#ffd700;
-    text-align:center;
-    margin-bottom:40px;
-    line-height:1.5;
+    position:sticky;
+    top:0;
+    z-index:10;
 }
 
 .menu-btn{
-    width:100%;
-    padding:18px;
-    margin-bottom:18px;
+    padding:14px 22px;
     border:none;
     border-radius:12px;
-    font-size:18px;
+    font-size:17px;
     font-weight:bold;
     cursor:pointer;
-    background:rgba(255,255,255,0.12);
+    background:rgba(255,255,255,0.15);
     color:white;
     transition:0.3s;
 }
@@ -63,12 +51,16 @@ body{
 .menu-btn:hover{
     background:#ffd700;
     color:#000;
-    transform:translateX(6px);
+    transform:translateY(-2px);
 }
 
-/* Nội dung */
-.content{
-    flex:1;
+.menu-btn.active{
+    background:#ffd700;
+    color:#000;
+}
+
+/* CONTENT */
+.container{
     padding:40px;
 }
 
@@ -79,6 +71,8 @@ body{
     backdrop-filter:blur(8px);
     box-shadow:0 10px 30px rgba(0,0,0,0.25);
     animation:fade 0.3s ease;
+    max-width:900px;
+    margin:auto;
 }
 
 h1{
@@ -113,62 +107,62 @@ p{
 
 <body>
 
+<!-- HEADER -->
+<div class="header">
+    <button class="menu-btn active" onclick="showTab('contact', this)">
+        ☎ Thông tin liên hệ
+    </button>
+
+    <button class="menu-btn" onclick="showTab('history', this)">
+        ⭐ Lịch sử trưởng thành
+    </button>
+</div>
+
+<!-- CONTENT -->
 <div class="container">
 
-    <div class="sidebar">
-        <div class="logo">
-            LỮ ĐOÀN<br>THÔNG TIN 602
-        </div>
+    <div id="contact" class="card">
+        <h1>Thông tin liên hệ</h1>
 
-        <button class="menu-btn" onclick="showTab('contact')">
-            ☎ Thông tin liên hệ
-        </button>
+        <h2>Địa chỉ</h2>
+        <p>Nhập địa chỉ đơn vị tại đây</p>
 
-        <button class="menu-btn" onclick="showTab('history')">
-            ⭐ Lịch sử trưởng thành
-        </button>
+        <h2>Liên hệ</h2>
+        <p>• Đ/c Trần Ngọc Nam</p>
+        <p>• Đ/c Hà Văn Tường</p>
+        <p>• Đ/c Nguyễn Đình Rĩnh</p>
+
+        <h2>Khẩu hiệu</h2>
+        <p>Kịp thời – Chính xác – Bí mật – An toàn</p>
     </div>
 
-    <div class="content">
+    <div id="history" class="card" style="display:none;">
+        <h1>Lịch sử trưởng thành</h1>
 
-        <div id="contact" class="card">
-            <h1>Thông tin liên hệ</h1>
+        <p>
+            Đây là nơi bạn viết toàn bộ lịch sử hình thành,
+            thành tích, truyền thống, dấu mốc quan trọng...
+        </p>
 
-            <h2>Địa chỉ</h2>
-            <p>Nhập địa chỉ đơn vị tại đây</p>
-
-            <h2>Liên hệ</h2>
-            <p>• Đ/c Trần Ngọc Nam</p>
-            <p>• Đ/c Hà Văn Tường</p>
-            <p>• Đ/c Nguyễn Đình Rĩnh</p>
-
-            <h2>Khẩu hiệu</h2>
-            <p>Kịp thời – Chính xác – Bí mật – An toàn</p>
-        </div>
-
-        <div id="history" class="card" style="display:none;">
-            <h1>Lịch sử trưởng thành</h1>
-
-            <p>
-                Đây là nơi bạn viết toàn bộ lịch sử hình thành,
-                thành tích, truyền thống, dấu mốc quan trọng...
-            </p>
-
-            <p>
-                Muốn viết dài bao nhiêu cũng được.
-            </p>
-        </div>
-
+        <p>Muốn viết dài bao nhiêu cũng được.</p>
     </div>
 
 </div>
 
 <script>
-function showTab(tab){
+function showTab(tab, btn){
+
     document.getElementById("contact").style.display="none";
     document.getElementById("history").style.display="none";
 
     document.getElementById(tab).style.display="block";
+
+    // đổi trạng thái nút
+    document.querySelectorAll(".menu-btn").forEach(b=>{
+        b.classList.remove("active");
+    });
+
+    btn.classList.add("active");
 }
 </script>
 
