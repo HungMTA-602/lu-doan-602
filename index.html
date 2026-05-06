@@ -23,32 +23,34 @@ body{
     background-attachment:fixed;
 }
 
-/* ===== HEADER TOP (LOGO + TITLE) ===== */
+/* ===== TOP HEADER (HUY HIỆU) ===== */
 .top-header{
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:15px;
-    padding:15px 30px;
-    background:rgba(0,30,90,0.9);
+    gap:6px;
+    padding:10px 20px;
+    background:rgba(0,30,90,0.92);
     backdrop-filter:blur(10px);
 }
 
-.top-header .title{
-    font-size:26px;
-    font-weight:bold;
-    color:#ffd700;
-    text-align:center;
-    flex:1;
-}
-
 .logo{
-    width:55px;
-    height:55px;
+    width:42px;
+    height:42px;
     object-fit:contain;
 }
 
-/* ===== HEADER MENU ===== */
+.title{
+    font-size:24px;
+    font-weight:bold;
+    color:#ffd700;
+    letter-spacing:1px;
+    padding:0 10px;
+    text-transform:uppercase;
+    text-shadow:0 2px 5px rgba(0,0,0,0.5);
+}
+
+/* ===== MENU ===== */
 .header{
     display:flex;
     justify-content:center;
@@ -80,7 +82,7 @@ body{
     color:#000;
 }
 
-/* CONTENT */
+/* ===== CONTENT ===== */
 .container{
     padding:40px;
 }
@@ -145,21 +147,18 @@ p{
 
 <body>
 
-<!-- ===== TOP HEADER (LOGO + TITLE) ===== -->
+<!-- ===== HUY HIỆU HEADER ===== -->
 <div class="top-header">
 
-    <!-- LOGO TRÁI -->
     <img src="logo1.png" class="logo">
 
-    <!-- TITLE -->
     <div class="title">LỮ ĐOÀN THÔNG TIN 602</div>
 
-    <!-- LOGO PHẢI -->
     <img src="logo2.png" class="logo">
 
 </div>
 
-<!-- ===== MENU BUTTONS ===== -->
+<!-- ===== MENU ===== -->
 <div class="header">
     <button class="menu-btn active" onclick="showTab('contact', this)">
         ☎ Thông tin liên hệ
@@ -182,7 +181,7 @@ p{
         <a class="map-btn"
            href="https://www.google.com/maps?q=10.7769,106.7009"
            target="_blank">
-           🗺 Mở vị trí trên Google Maps
+           🗺 Mở Google Maps
         </a>
 
         <h2>Liên hệ</h2>
@@ -201,6 +200,8 @@ p{
             Đây là nơi bạn viết toàn bộ lịch sử hình thành,
             thành tích, truyền thống, dấu mốc quan trọng...
         </p>
+
+        <p>Muốn viết dài bao nhiêu cũng được.</p>
     </div>
 
 </div>
