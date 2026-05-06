@@ -73,7 +73,7 @@ body{
     padding:14px 22px;
     border:none;
     border-radius:12px;
-    font-size:17px;
+    font-size:14px;
     font-weight:bold;
     cursor:pointer;
     background:rgba(255,255,255,0.15);
@@ -301,15 +301,21 @@ p{
 </div>
 <script>
 function showTab(tab, btn){
-    document.getElementById("contact").style.display="none";
-    document.getElementById("history").style.display="none";
 
+    // Ẩn tất cả các tab
+    document.querySelectorAll(".card").forEach(c=>{
+        c.style.display="none";
+    });
+
+    // Hiện tab được chọn
     document.getElementById(tab).style.display="block";
 
+    // Xoá active tất cả nút
     document.querySelectorAll(".menu-btn").forEach(b=>{
         b.classList.remove("active");
     });
 
+    // Active nút đang bấm
     btn.classList.add("active");
 }
 </script>
