@@ -182,8 +182,34 @@ p{
     margin:0 auto;
     border-radius:10px;
     box-shadow:0 5px 15px rgba(0,0,0,0.4);
+
+    cursor:pointer;
+    transition:0.3s;
 }
 
+.img-box img:hover{
+    transform:scale(1.02);
+}
+
+.popup-img{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,0.9);
+    z-index:99999;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+.popup-img img{
+    max-width:90%;
+    max-height:90%;
+    width:auto;
+    height:auto;
+    border-radius:12px;
+    box-shadow:0 0 30px rgba(255,255,255,0.2);
+}
 .caption{
     text-align:center;
     font-style:italic;
@@ -345,12 +371,12 @@ p{
 
             <h2>Địa chỉ:</h2> 
               <div class="img-box">
-        <img src="mapchuan.png">
-    </div>
+    <img src="mapchuan.png" onclick="openImg(this.src)">
+</div>
              <p class="caption2">Số 267, Lê Hồng Phong, Hải An, Hải Phòng</p>
             <a class="map-btn" href="https://maps.app.goo.gl/iCQdcDSNPrxoDaZY7" target="_blank"> 🗺 Mở Google Maps </a>
             <div class="img-box">
-        <img src="sochihuy.jpg">
+        <img src="sochihuy.jpg" onclick="openImg(this.src)">
     </div>
              <p class="caption2">Sở chỉ huy Lữ đoàn 602</p>
             <h2>Thông tin liên hệ:</h2>
@@ -359,7 +385,7 @@ p{
              <p class="history-text3">• Đ/c Nguyễn Đình Rĩnh - Cán bộ, Chính sách (SĐT: 0972.514.658)</p>
             <h2>Số tài khoản của đơn vị:</h2> 
             <div class="img-box"> 
-               <img src="stk.jpg" class="maqr"> </div> 
+               <img src="stk.jpg" class="maqr" onclick="openImg(this.src)"> </div> 
         </div>
 
 <div id="history" class="card" style="display:none;">
@@ -371,7 +397,7 @@ p{
     </p>
 
     <div class="img-box">
-        <img src="nutt.jpg">
+        <img src="nutt.jpg" onclick="openImg(this.src)">
         <p class="caption">
             Các nữ chiến sĩ thông tin của đơn vị đang bảo đảm thông tin phục vụ chiến đấu. Ảnh tư liệu
         </p>
@@ -382,7 +408,7 @@ p{
     </p>
 
     <div class="img-box">
-        <img src="traohc.jpg">
+        <img src="traohc.jpg" onclick="openImg(this.src)">
         <p class="caption1">
             Với những thành tích, chiến công xuất sắc trong chiến đấu, phục vụ chiến đấu, củng cố quốc phòng, bảo vệ Tổ quốc, năm 2015, Lữ đoàn Thông tin 602 vinh dự đón nhận danh hiệu Đơn vị Anh hùng Lực lượng vũ trang nhân dân.
         </p>
@@ -398,15 +424,18 @@ p{
     <h1>Chương trình buổi lễ</h1>
 
     <div class="img-box">
-        <img src="chuongtrinh.png">
+        <img src="chuongtrinh.png" onclick="openImg(this.src)">
 
     </div>
 
 </div>
+                <div class="popup-img" id="popup" onclick="closeImg()">
+    <img id="popupShow">
+</div>
 <script>
 function showTab(tab, btn){
 
-    // Ẩn tất cả các tab
+    // Ẩn tất cả tab
     document.querySelectorAll(".card").forEach(c=>{
         c.style.display="none";
     });
@@ -414,13 +443,23 @@ function showTab(tab, btn){
     // Hiện tab được chọn
     document.getElementById(tab).style.display="block";
 
-    // Xoá active tất cả nút
+    // Bỏ active tất cả nút
     document.querySelectorAll(".menu-btn").forEach(b=>{
         b.classList.remove("active");
     });
 
     // Active nút đang bấm
     btn.classList.add("active");
+}
+
+/* PHÓNG TO ẢNH */
+function openImg(src){
+    document.getElementById("popupShow").src = src;
+    document.getElementById("popup").style.display = "flex";
+}
+
+function closeImg(){
+    document.getElementById("popup").style.display = "none";
 }
 </script>
 
