@@ -28,7 +28,7 @@
     gap:8px;
     padding:10px 20px;
     margin:0;
-    background:rgba(0,30,90,0.92);
+    background:#001e5a;
 }
 
 /* thanh 2 */
@@ -36,7 +36,7 @@
     text-align:center;
     padding:8px 15px;
     margin:0;
-    background:rgba(0,30,90,0.85);
+    background:#00296b;
     color:#ffd700;
     font-size:14px;
     font-weight:bold;
@@ -51,17 +51,22 @@
     gap:15px;
     padding:10px;
     margin:0;
-    background:rgba(0,50,120,0.92);
+    background:#003b8e;
 }
 body{
     color:white;
-    background-image:
-    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
-    url("LogoHQ.png");
-    background-size:contain;
-    background-repeat:no-repeat;
-    background-position:center 170px; /* bắt đầu ngay dưới header */
     background-color:#0b1f45;
+
+    background-image:
+        linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+        url("LogoHQ.png");
+
+    background-repeat:no-repeat;
+    background-size:contain;
+
+    /* giữa phần còn lại dưới header */
+    background-position:center calc(50% + 90px);
+
     background-attachment:fixed;
 }
 
