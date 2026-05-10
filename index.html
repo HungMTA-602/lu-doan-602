@@ -29,6 +29,12 @@ body{
 
 /* ===== TOP HEADER ===== */
 .top-header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+
     display:flex;
     align-items:center;
     justify-content:center;
@@ -55,6 +61,12 @@ body{
     margin:0 18px;
 }
 .slogan-header{
+    position:fixed;
+    top:80px;
+    left:0;
+    width:100%;
+    z-index:999;
+
     text-align:center;
     padding:10px 15px;
     background:rgba(0,30,90,0.75);
@@ -67,6 +79,12 @@ body{
 }
 /* ===== MENU ===== */
 .header{
+    position:fixed;
+    top:118px;
+    left:0;
+    width:100%;
+    z-index:998;
+
     display:flex;
     justify-content:center;
     gap:15px;
@@ -106,7 +124,7 @@ body{
 
 /* ===== CONTENT ===== */
 .container{
-    padding:40px;
+    padding:220px 40px 40px;
 }
 
 .card{
