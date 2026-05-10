@@ -12,7 +12,47 @@
     box-sizing:border-box;
     font-family:Arial,sans-serif;
 }
+.header-wrap{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+}
 
+/* thanh 1 */
+.top-header{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:10px 20px;
+    margin:0;
+    background:rgba(0,30,90,0.92);
+}
+
+/* thanh 2 */
+.slogan-header{
+    text-align:center;
+    padding:8px 15px;
+    margin:0;
+    background:rgba(0,30,90,0.85);
+    color:#ffd700;
+    font-size:14px;
+    font-weight:bold;
+    letter-spacing:1px;
+    text-transform:uppercase;
+}
+
+/* thanh 3 */
+.header{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    padding:10px;
+    margin:0;
+    background:rgba(0,50,120,0.92);
+}
 body{
     color:white;
     background-image:
@@ -26,22 +66,7 @@ body{
 }
 
 /* ===== TOP HEADER ===== */
-.top-header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:1000;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-    padding:10px 20px;
-    margin:0;
-
-    background:rgba(0,30,90,0.92);
-}
 
 .logo{
     width:60px;
@@ -59,40 +84,9 @@ body{
     text-shadow:0 2px 5px rgba(0,0,0,0.6);
     margin:0 18px;
 }
-.slogan-header{
-    position:fixed;
-    top:80px;
-    left:0;
-    width:100%;
-    z-index:999;
 
-    padding:6px 15px;
-    margin:0;
-    line-height:1.2;
-
-    text-align:center;
-    background:rgba(0,30,90,0.92);
-    color:#ffd700;
-    font-size:14px;
-    font-weight:bold;
-}
 /* ===== MENU ===== */
-.header{
-    position:fixed;
-    top:106px;
-    left:0;
-    width:100%;
-    z-index:998;
 
-    padding:10px;
-    margin:0;
-
-    display:flex;
-    justify-content:center;
-    gap:15px;
-
-    background:rgba(0,50,120,0.92);
-}
 
 .menu-btn{
     padding:16px 22px;
@@ -311,6 +305,7 @@ p{
 <body>
 
 <!-- TOP -->
+    <div class="header-wrap">
 <div class="top-header">
     <img src="logo.png" class="logo">
 
@@ -337,7 +332,7 @@ p{
     Chương trình<br>buổi lễ
 </button>
 </div>
-
+</div>
 <!-- ===== CONTENT ===== --> 
     <div class="container"> 
         <div id="contact" class="card"> 
