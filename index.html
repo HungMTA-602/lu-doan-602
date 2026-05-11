@@ -72,22 +72,19 @@ body{
 
 /* ===== TOP HEADER ===== */
 .top-header{
-    display:grid;
-    grid-template-columns:1fr auto 1fr;
+    display:flex;
     align-items:center;
+    justify-content:center;
+    gap:20px;
     width:100%;
     padding:10px 20px;
     background:#001e5a;
 }
 
-.top-header img:first-child{
-    margin-right:-10px;
-}
 .logo{
     width:60px;
     height:60px;
     object-fit:contain;
-    margin:0;   /* bỏ margin này */
 }
 
 .title{
@@ -95,9 +92,9 @@ body{
     font-weight:bold;
     color:#ffd700;
     text-align:center;
+    line-height:1.5;
     letter-spacing:1px;
     text-shadow:0 2px 5px rgba(0,0,0,0.6);
-    margin:0 18px;
 }
 
 /* ===== MENU ===== */
