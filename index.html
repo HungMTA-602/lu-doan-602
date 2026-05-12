@@ -72,13 +72,31 @@ body{
 
 /* ===== TOP HEADER ===== */
 .top-header{
-    display:flex;
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
     align-items:center;
-    justify-content:center;
-    gap:20px;
     width:100%;
     padding:10px 20px;
     background:#001e5a;
+}
+
+.logo-group{
+    display:flex;
+    align-items:center;
+    gap:2px;
+}
+
+.left-logos{
+    justify-content:flex-end;
+}
+
+.right-logos{
+    justify-content:flex-start;
+}
+
+.title{
+    text-align:center;
+    margin:0 25px;
 }
 
 .logo{
@@ -86,7 +104,9 @@ body{
     height:60px;
     object-fit:contain;
 }
-
+.fake-logo{
+    opacity:0;
+}
 .title{
     font-size:20px;
     font-weight:bold;
@@ -347,12 +367,17 @@ p{
 <!-- TOP -->
     <div class="header-wrap">
 <div class="top-header">
-          <img src="huyhieu.png" class="logo">
-    <div class="title">
+    <div class="logo-group left-logos">
+        <img src="logo.png" class="logo fake-logo"> 
+        <img src="logo.png" class="logo">
+            <div class="title">
         LỮ ĐOÀN<br>
         THÔNG TIN 602
     </div>
+         <div class="logo-group left-logos">
+        <img src="huyhieu.png" class="logo">
          <img src="huanchuong.png" class="logo">
+              </div>
      </div>
 <div class="slogan-header">
     Kịp thời – Chính xác – Bí mật – An toàn
