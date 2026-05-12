@@ -72,28 +72,23 @@ body{
 
 /* ===== TOP HEADER ===== */
 .top-header{
-    display:grid;
-    grid-template-columns:1fr auto 1fr;
+    display:flex;
     align-items:center;
-    width:100%;
-    padding:10px 20px;
+    justify-content:space-between;
+    padding:10px 25px;
     background:#001e5a;
 }
 
-.logo-group{
+.header-left{
     display:flex;
     align-items:center;
-    gap:2px;
+    gap:6px;
 }
 
-.left-logos{
-    justify-content:flex-end;
+.header-right{
+    display:flex;
+    align-items:center;
 }
-
-.right-logos{
-    justify-content:flex-start;
-}
-
 .title{
     text-align:center;
     margin:0 25px;
@@ -367,21 +362,23 @@ p{
 <!-- TOP -->
     <div class="header-wrap">
 <div class="top-header">
-    <div class="logo-group left-logos">
+    <div class="header-left">
         <img src="logo.png" class="logo fake-logo"> 
         <img src="logo.png" class="logo">
             <div class="title">
         LỮ ĐOÀN<br>
         THÔNG TIN 602
     </div>
-         <div class="logo-group left-logos">
+         
         <img src="huyhieu.png" class="logo">
          <img src="huanchuong.png" class="logo">
-              </div>
+              
      </div>
+    <div class="header-right">
 <div class="slogan-header">
     Kịp thời – Chính xác – Bí mật – An toàn
 </div>
+        </div>
 <!-- MENU -->
 <div class="header">
     <button class="menu-btn active" onclick="showTab('contact', this)">
