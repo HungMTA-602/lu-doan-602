@@ -72,31 +72,25 @@ body{
 
 /* ===== TOP HEADER ===== */
 .top-header{
-    position:relative;
-
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
+    gap:20px;
 
     padding:10px 25px;
     background:#001e5a;
 }
 
 .header-left{
-    position:absolute;
-    left:20px;
-
     display:flex;
     align-items:center;
     gap:12px;
 }
 
 .header-right{
-    position:absolute;
-    right:20px;
-
     display:flex;
     align-items:center;
+    gap:12px;
 }
 
 .logo{
@@ -109,19 +103,14 @@ body{
     opacity:0;
 }
 .title{
-    position:absolute;
-    left:50%;
-    transform:translateX(-50%);
-
     font-size:20px;
     font-weight:bold;
     color:#ffd700;
     text-align:center;
-    line-height:1.5;
+    line-height:1.4;
     letter-spacing:1px;
     text-shadow:0 2px 5px rgba(0,0,0,0.6);
 }
-
 /* ===== MENU ===== */
 
 
@@ -378,21 +367,22 @@ p{
     <!-- THANH 1 -->
     <div class="top-header">
 
-        <div class="header-left">
-
-            <img src="logo.png" class="logo fake-logo">
-
-            <img src="logo.png" class="logo">
-
-            <img src="huyhieu.png" class="logo">
-            <img src="huanchuong.png" class="logo">
-
-        </div>
-            <div class="title">
-                LỮ ĐOÀN<br>
-                THÔNG TIN 602
-            </div>
+    <div class="header-left">
+        <img src="logo.png" class="logo">
+        <img src="logo.png" class="logo fake-logo">
     </div>
+
+    <div class="title">
+        LỮ ĐOÀN<br>
+        THÔNG TIN 602
+    </div>
+
+    <div class="header-right">
+        <img src="huyhieu.png" class="logo">
+        <img src="huanchuong.png" class="logo">
+    </div>
+
+</div>
 
     <!-- THANH 2 -->
     <div class="slogan-header">
